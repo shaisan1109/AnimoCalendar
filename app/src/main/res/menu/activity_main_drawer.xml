@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    android:fontFamily="@font/inter"
+    android:textSize="20sp">
+
+    <group
+        android:id="@+id/group_calendar"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_year"
+            android:icon="@drawable/baseline_calendar_month_24"
+            android:title="Year" />
+        <item
+            android:id="nav_month"
+            android:icon="@drawable/baseline_calendar_today_24"
+            android:title="Month" />
+        <item
+            android:id="nav_week"
+            android:icon="@drawable/baseline_calendar_view_week_24"
+            android:title="Week" />
+        <item
+            android:id="nav_day"
+            android:icon="@drawable/baseline_calendar_view_day_24"
+            android:title="Day" />
+    </group>
+    <group
+        android:id="@+id/group_settings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <item
+            android:id="nav_preferences"
+            android:icon="@drawable/baseline_settings_24"
+            android:title="Preferences" />
+        <item
+            android:id="nav_sync"
+            android:icon="@drawable/baseline_sync_24"
+            android:title="Sync" />
+        <item
+            android:id="nav_change_theme"
+            android:icon="@drawable/baseline_color_lens_24"
+            android:title="Change Theme" />
+    </group>
+    <group
+        android:id="@+id/group_other"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <item
+            android:id="nav_help"
+            android:icon="@drawable/baseline_help_24"
+            android:title="Help" />
+        <item
+            android:id="nav_feedback"
+            android:icon="@drawable/baseline_feedback_24"
+            android:title="Feedback" />
+    </group>
+</menu>
