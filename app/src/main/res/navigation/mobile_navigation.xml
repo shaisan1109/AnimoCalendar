@@ -5,6 +5,7 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_year">
 
+    <!-- Calendar group -->
     <fragment
         android:id="@+id/nav_year"
         android:name="com.mobdeve.s11.mco11.animocalendar.ui.home.HomeFragment"
@@ -12,14 +13,52 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.mobdeve.s11.mco11.animocalendar.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_month"
+        android:name="com.mobdeve.s11.mco11.animocalendar.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.mobdeve.s11.mco11.animocalendar.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_week"
+        android:name="com.mobdeve.s11.mco11.animocalendar.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_day"
+        android:name="com.mobdeve.s11.mco11.animocalendar.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <!-- Settings group -->
+    <fragment
+        android:id="@+id/nav_preferences"
+        android:name="com.mobdeve.s11.mco11.animocalendar.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/nav_sync"-->
+<!--        android:name="com.mobdeve.s11.mco11.animocalendar.ui.home.HomeFragment"-->
+<!--        android:label="@string/menu_home"-->
+<!--        tools:layout="@layout/fragment_home" />-->
+
+    <fragment
+        android:id="@+id/nav_change_theme"
+        android:name="com.mobdeve.s11.mco11.animocalendar.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <!-- Miscellaneous group -->
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.mobdeve.s11.mco11.animocalendar.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/nav_feedback"-->
+<!--        android:name="com.mobdeve.s11.mco11.animocalendar.ui.home.HomeFragment"-->
+<!--        android:label="@string/menu_home"-->
+<!--        tools:layout="@layout/fragment_home" />-->
 </navigation>

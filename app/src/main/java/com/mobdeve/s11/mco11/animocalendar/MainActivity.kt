@@ -29,15 +29,20 @@ class MainActivity : AppCompatActivity() {
         binding.appBarMain.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+            /* TODO: Add Intent to AddEvent */
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+
+        // List down navigation objects here (see mobile_navigation.xml)
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_year, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_year, R.id.nav_month, R.id.nav_week, R.id.nav_day,
+                R.id.nav_preferences, R.id.nav_sync, R.id.nav_change_theme,
+                R.id.nav_help, R.id.nav_feedback
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
