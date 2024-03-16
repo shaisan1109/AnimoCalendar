@@ -26,7 +26,8 @@
     <group
         android:id="@+id/group_settings"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_preferences"
             android:icon="@drawable/baseline_settings_24"
@@ -43,7 +44,8 @@
     <group
         android:id="@+id/group_other"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_help"
             android:icon="@drawable/baseline_help_24"
