@@ -12,11 +12,10 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
+    <activity
         android:id="@+id/nav_month"
-        android:name="com.mobdeve.s11.mco11.animocalendar.MonthFragment"
-        android:label="JANUARY 2024"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.mobdeve.s11.mco11.animocalendar.MonthActivity"
+        android:label="JANUARY 2024" />
 
     <fragment
         android:id="@+id/nav_week"
