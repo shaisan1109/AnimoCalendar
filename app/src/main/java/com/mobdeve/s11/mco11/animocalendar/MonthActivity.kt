@@ -10,16 +10,20 @@ import androidx.recyclerview.widget.RecyclerView
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
+import com.mobdeve.s11.mco11.animocalendar.databinding.ActivityMonthBinding
+
 
 class MonthActivity : AppCompatActivity(), MyAdapter.OnItemListener {
 
+    private lateinit var binding: ActivityMonthBinding
     private lateinit var monthYearText: TextView
     private lateinit var calendarRecyclerView: RecyclerView
     private lateinit var selectedDate: Calendar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_month)
+        binding = ActivityMonthBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         initWidgets()
         selectedDate = Calendar.getInstance()
@@ -27,8 +31,8 @@ class MonthActivity : AppCompatActivity(), MyAdapter.OnItemListener {
     }
 
     private fun initWidgets() {
-        calendarRecyclerView = findViewById(R.id.calendarRecyclerView)
-        monthYearText = findViewById(R.id.monthYearTV)
+        calendarRecyclerView = binding.calendarRecyclerView
+        monthYearText = binding.monthYearTV
     }
 
     private fun setMonthView() {
