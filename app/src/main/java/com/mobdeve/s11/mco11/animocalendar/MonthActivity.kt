@@ -12,8 +12,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 import com.mobdeve.s11.mco11.animocalendar.databinding.ActivityMonthBinding
 
-
-class MonthActivity : AppCompatActivity(), MyAdapter.OnItemListener {
+class MonthActivity : DrawerBaseActivity(), MyAdapter.OnItemListener {
 
     private lateinit var binding: ActivityMonthBinding
     private lateinit var monthYearText: TextView
@@ -24,6 +23,7 @@ class MonthActivity : AppCompatActivity(), MyAdapter.OnItemListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMonthBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        allocateActivityTitle("Month View")
 
         initWidgets()
         selectedDate = Calendar.getInstance()

@@ -13,10 +13,21 @@
         android:theme="@style/Theme.AnimoCalendar"
         tools:targetApi="31">
         <activity
+            android:name=".YearActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WeekActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DrawerBaseActivity"
+            android:exported="false" />
+        <activity
             android:name=".MonthActivity"
             android:exported="false"
-            android:theme="@style/Theme.AnimoCalendar.NoActionBar"
-        />
+            android:theme="@style/Theme.AnimoCalendar.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
