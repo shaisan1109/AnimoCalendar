@@ -32,7 +32,7 @@
         app:itemIconTint="@drawable/drawer_item"
         app:itemTextAppearance="@font/inter"
         app:itemTextColor="@drawable/drawer_item"
-        app:menu="@menu/activity_main_drawer"
+        app:menu="@menu/main_drawer_menu"
         app:itemBackground="@drawable/drawer_selected_item" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
