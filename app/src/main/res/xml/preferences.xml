@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:key="category_appearance"
+        app:title="Appearance">
+
+        <SwitchPreferenceCompat
+            app:key="switch_time"
+            app:title="24-Hour Time" />
+
+        <ListPreference
+            android:defaultValue="Sunday"
+            android:entries="@array/firstDayEntries"
+            android:entryValues="@array/firstDay"
+            android:key="list_preference_first_day"
+            android:title="First day of the week" />
+
+        <SwitchPreferenceCompat
+            app:key="switch_event_wrap"
+            app:title="Let event titles wrap" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="category_notifications"
+        app:title="Notifications">
+
+        <SwitchPreferenceCompat
+            app:key="switch_notifications"
+            app:title="Notifications" />
+
+        <SwitchPreferenceCompat
+            app:key="switch_alarm"
+            app:title="Alarm" />
+
+        <Preference
+            app:key="feedback"
+            app:title="Send feedback"
+            app:summary="Report technical issues or suggest new features"/>
+
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>
