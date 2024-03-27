@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. (Light Mode) -->
-    <style name="Theme.AnimoCalendar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.AnimoCalendar" parent="Theme.Material3.Light">
         <!-- Primary brand color -->
         <item name="colorPrimary">@color/light_accent</item>
         <item name="colorPrimaryVariant">@color/light_accent_variant</item>
@@ -24,6 +24,7 @@
         <item name="android:fontFamily">@font/inter</item>
     </style>
 
+
     <!-- Other default styles -->
     <style name="Theme.AnimoCalendar.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -33,4 +34,11 @@
     <style name="Theme.AnimoCalendar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.AnimoCalendar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!-- Halloween Theme -->
+
+    <!-- Valentines Theme -->
+
+    <!-- Christmas Theme -->
 </resources>

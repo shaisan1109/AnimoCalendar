@@ -28,4 +28,31 @@
     <color name="dark_txt">#FFFFFF</color>
     <color name="dark_accent_txt">#0D6C42</color>
 
+    <!-- Halloween Theme -->
+    <color name="hw_bg">#000C27</color>
+    <color name="hw_accent">#FF9A24</color>
+    <color name="hw_highlight">#A386F9</color>
+    <color name="hw_outline">#5F6A71</color>
+
+    <color name="hw_txt">#000000</color>
+    <color name="hw_accent_txt">#9AE384</color>
+
+    <!-- Valentines Theme -->
+    <color name="val_bg">#FFF7F2</color>
+    <color name="val_accent">#DF668E</color>
+    <color name="val_highlight">#FFE9ED</color>
+    <color name="val_outline">#D7CECA</color>
+
+    <color name="val_txt">#FEF4EA</color>
+    <color name="val_accent_txt">#DF668E</color>
+
+    <!-- Christmas Theme -->
+    <color name="xmas_bg">#F4EDD7</color>
+    <color name="xmas_accent">#294221</color>
+    <color name="xmas_highlight">#B42D1A</color>
+    <color name="xmas_outline">#C6B173</color>
+
+    <color name="xmas_txt">#E9DDB9</color>
+    <color name="xmas_accent_txt">#FFFFFF</color>
+
 </resources>
