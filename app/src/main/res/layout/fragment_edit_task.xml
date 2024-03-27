@@ -55,7 +55,7 @@
                 android:layout_width="155dp"
                 android:layout_height="33dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:ems="10"
                 android:inputType="date"
                 app:layout_constraintStart_toEndOf="@+id/finishByLabel"
