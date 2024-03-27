@@ -12,6 +12,7 @@
     <!-- Light Mode -->
     <color name="light_bg">#FFFFFF</color>
     <color name="light_accent">#0D6C42</color>
+    <color name="light_accent_variant">#08452a</color>
     <color name="light_highlight">#FFFFE5</color>
     <color name="light_outline">#BFC5C9</color>
 

@@ -1,25 +1,30 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme. (Light Mode) -->
     <style name="Theme.AnimoCalendar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/light_accent</item>
+        <item name="colorPrimaryVariant">@color/light_accent_variant</item>
         <item name="colorOnPrimary">@color/white</item>
 
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/light_accent</item>
+        <item name="colorSecondaryVariant">@color/light_accent</item>
+        <item name="colorOnSecondary">@color/white</item>
 
-        <!-- Status bar color. -->
+        <!-- Background color -->
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorOnBackground">@color/light_accent</item> <!-- Color used on navbar -->
+        <item name="colorOnBackground2">@color/black</item> <!-- Color used on calendar -->
+        <item name="colorOnBackgroundOutline">@color/light_outline</item> <!-- Color used for calendar outline -->
+
+        <!-- Status bar color (bar with time, battery, etc.) -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
 
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/inter</item>
-
     </style>
 
+    <!-- Other default styles -->
     <style name="Theme.AnimoCalendar.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
