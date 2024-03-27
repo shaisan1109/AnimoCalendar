@@ -1,14 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditTaskFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="412dp"
+            android:layout_height="121dp">
+
+            <Button
+                android:id="@+id/editTaskColor"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.197"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/editTaskName"
+                android:layout_width="226dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="24dp"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.236"
+                app:layout_constraintStart_toEndOf="@+id/editTaskColor"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/finishByLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="24dp"
+                android:text="Finish By:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTaskColor" />
+
+            <EditText
+                android:id="@+id/editFinishDate"
+                android:layout_width="155dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:ems="10"
+                android:inputType="date"
+                app:layout_constraintStart_toEndOf="@+id/finishByLabel"
+                app:layout_constraintTop_toBottomOf="@+id/editTaskName" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="412dp"
+            android:layout_height="188dp"
+            tools:layout_editor_absoluteX="-1dp"
+            tools:layout_editor_absoluteY="120dp">
+
+            <TextView
+                android:id="@+id/createdTaskMaker"
+                android:layout_width="104dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="4dp"
+                android:text="Created By:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/pfpTaskCreator"
+                android:layout_width="41dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createdTaskMaker"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/nameTaskCreator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="TextView"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/pfpTaskCreator"
+                app:layout_constraintTop_toBottomOf="@+id/createdTaskMaker" />
+
+            <TextView
+                android:id="@+id/taskDescription"
+                android:layout_width="150dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="8dp"
+                android:text="Task Description:"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/pfpTaskCreator"
+                tools:layout_editor_absoluteX="51dp" />
+
+            <TextView
+                android:id="@+id/descriptionContent"
+                android:layout_width="336dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@+id/taskDescription"
+                tools:layout_editor_absoluteX="50dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="409dp"
+            android:layout_height="172dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="309dp">
+
+            <TextView
+                android:id="@+id/taskPriorityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="8dp"
+                android:text="Task Priority"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioButton
+                android:id="@+id/low_prio"
+                android:layout_width="179dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="4dp"
+                android:text="Low Priority"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/taskPriorityText" />
+
+            <RadioButton
+                android:id="@+id/med_prio"
+                android:layout_width="179dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="48dp"
+                android:text="Medium Priority"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/low_prio" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="179dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="1dp"
+                android:text="High Priority "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/med_prio" />
+
+            <RadioButton
+                android:id="@+id/urgent_prio"
+                android:layout_width="179dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="48dp"
+                android:text="Urgent "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioButton4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="409dp"
+            android:layout_height="185dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="482dp">
+
+            <RadioButton
+                android:id="@+id/acad_cat"
+                android:layout_width="179dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="1dp"
+                android:text="Academic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pers_cat" />
+
+            <RadioButton
+                android:id="@+id/pers_cat"
+                android:layout_width="179dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="4dp"
+                android:text="Personal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/category_label" />
+
+            <RadioButton
+                android:id="@+id/holi_cat"
+                android:layout_width="179dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="1dp"
+                android:text="Holiday"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/acad_cat" />
+
+            <TextView
+                android:id="@+id/category_label"
+                android:layout_width="118dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="16dp"
+                android:text="Category"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="409dp"
+            android:layout_height="63dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="667dp">
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="106dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="8dp"
+                android:text="Cancel"
+                android:background="@android:color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="110dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="60dp"
+                android:background="@android:color/holo_green_dark"
+                android:text="Submit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
