@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="extraColors">
-        <attr name="colorOnBackground2" format="color" />
-        <attr name="colorOnBackgroundOutline" format="color" />
+        <attr name="colorCalendarText" format="color" />
+        <attr name="colorCalendarOutline" format="color" />
     </declare-styleable>
 </resources>

@@ -14,8 +14,8 @@
         <!-- Background color -->
         <item name="android:colorBackground">@color/black</item>
         <item name="colorOnBackground">@color/white</item> <!-- Color used on navbar -->
-        <item name="colorOnBackground2">@color/white</item> <!-- Color used on calendar -->
-        <item name="colorOnBackgroundOutline">@color/dark_outline</item> <!-- Color used for calendar outline -->
+        <item name="colorCalendarText">@color/white</item> <!-- Color used on calendar -->
+        <item name="colorCalendarOutline">@color/dark_outline</item> <!-- Color used for calendar outline -->
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>

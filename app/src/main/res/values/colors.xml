@@ -22,6 +22,7 @@
     <!-- Dark Mode -->
     <color name="dark_bg">#000000</color>
     <color name="dark_accent">#0D6C42</color>
+    <color name="dark_accent_variant">#08452a</color>
     <color name="dark_highlight">#FFFFE5</color>
     <color name="dark_outline">#5F6A71</color>
 
@@ -31,6 +32,7 @@
     <!-- Halloween Theme -->
     <color name="hw_bg">#000C27</color>
     <color name="hw_accent">#FF9A24</color>
+    <color name="hw_accent_variant">#bf721b</color> <!-- -25% value from accent (HSV) -->
     <color name="hw_highlight">#A386F9</color>
     <color name="hw_outline">#5F6A71</color>
 
@@ -40,6 +42,7 @@
     <!-- Valentines Theme -->
     <color name="val_bg">#FFF7F2</color>
     <color name="val_accent">#DF668E</color>
+    <color name="val_accent_variant">#9e4965</color>
     <color name="val_highlight">#FFE9ED</color>
     <color name="val_outline">#D7CECA</color>
 
@@ -49,6 +52,7 @@
     <!-- Christmas Theme -->
     <color name="xmas_bg">#F4EDD7</color>
     <color name="xmas_accent">#294221</color>
+    <color name="xmas_accent_variant">#1a2914</color> <!-- -10% value from accent -->
     <color name="xmas_highlight">#B42D1A</color>
     <color name="xmas_outline">#C6B173</color>
 
