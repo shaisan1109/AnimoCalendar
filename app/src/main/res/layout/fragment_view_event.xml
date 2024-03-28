@@ -11,8 +11,8 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/button4"
-            android:layout_width="89dp"
+            android:id="@+id/btn_event_priority"
+            android:layout_width="95dp"
             android:layout_height="33dp"
             android:layout_marginStart="15dp"
             android:backgroundTint="#F44336"
@@ -23,12 +23,12 @@
             android:textColor="@color/white"
             android:textSize="11sp"
             app:cornerRadius="20dp"
-            app:layout_constraintStart_toEndOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            app:layout_constraintStart_toEndOf="@+id/btn_event_color"
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_name"
             app:strokeColor="@color/light_outline" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_event_edit"
             android:layout_width="125dp"
             android:layout_height="50dp"
             android:layout_marginStart="153dp"
@@ -42,18 +42,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="37dp"
-            android:layout_height="37dp"
+        <ImageButton
+            android:id="@+id/btn_event_color"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/baseline_square_24"
             android:layout_marginStart="40dp"
             android:layout_marginTop="40dp"
-            android:background="#FF5722"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/tv_event_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -62,11 +65,11 @@
             android:text="EVENT NAME"
             android:textColor="#000000"
             android:textSize="22sp"
-            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/btn_event_color"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/tv_event_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -74,10 +77,10 @@
             android:text="Start"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_event_color" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/tv_event_start_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="54dp"
@@ -85,11 +88,11 @@
             android:text="Wed, Feb 14"
             android:textColor="#000000"
             android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/textView11"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintStart_toEndOf="@+id/tv_event_start"
+            app:layout_constraintTop_toBottomOf="@+id/btn_event_color" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/tv_event_end_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="63dp"
@@ -97,11 +100,11 @@
             android:text="Wed, Feb 14"
             android:textColor="#000000"
             android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/textView12"
-            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+            app:layout_constraintStart_toEndOf="@+id/tv_event_end"
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_start_date" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/tv_event_start_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -109,11 +112,11 @@
             android:text="8:00 AM"
             android:textColor="#000000"
             android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/textView13"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintStart_toEndOf="@+id/tv_event_start_date"
+            app:layout_constraintTop_toBottomOf="@+id/btn_event_color" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/tv_event_end_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -121,11 +124,11 @@
             android:text="9:30 AM"
             android:textColor="#000000"
             android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/textView14"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+            app:layout_constraintStart_toEndOf="@+id/tv_event_end_date"
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_start_time" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/tv_created_by"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -134,10 +137,10 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_end_date" />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/tv_event_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
@@ -145,21 +148,21 @@
             android:text="User Who Created Event"
             android:textColor="@color/black"
             android:textSize="15sp"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+            app:layout_constraintStart_toEndOf="@+id/iv_event_user"
+            app:layout_constraintTop_toBottomOf="@+id/tv_created_by" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iv_event_user"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView17"
+            app:layout_constraintTop_toBottomOf="@+id/tv_created_by"
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/tv_event_desc_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -168,10 +171,10 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_event_user" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/tv_event_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -180,10 +183,10 @@
             android:text="This user hasn’t placed a description for this event yet. "
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_desc_header" />
 
         <TextView
-            android:id="@+id/textView21"
+            android:id="@+id/tv_event_loc_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -192,20 +195,20 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_desc" />
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/tv_event_loc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginTop="3dp"
             android:text="No location set"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_loc_header" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/tv_event_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -213,10 +216,10 @@
             android:text="End"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_start" />
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/tv_event_cat_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -225,10 +228,10 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_loc" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btn_event_cat"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="40dp"
@@ -243,12 +246,12 @@
             android:textSize="14sp"
             app:cornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView23"
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_cat_header"
             app:strokeColor="#3F51B5"
             app:strokeWidth="2dp" />
 
         <TextView
-            android:id="@+id/textView24"
+            android:id="@+id/tv_repeat_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -257,26 +260,17 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button5" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_event_cat" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/tv_repeat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginTop="3dp"
             android:text="Don't repeat"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView24" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="3dp"
-            android:src="@drawable/baseline_add_24"
-            app:layout_constraintStart_toEndOf="@+id/button5"
-            app:layout_constraintTop_toBottomOf="@+id/textView23" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_repeat_header" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
