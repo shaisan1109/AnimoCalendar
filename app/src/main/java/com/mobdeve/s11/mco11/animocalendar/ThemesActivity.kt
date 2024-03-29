@@ -1,6 +1,5 @@
 package com.mobdeve.s11.mco11.animocalendar
 
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -15,7 +14,7 @@ class ThemesActivity : DrawerBaseActivity() {
 
     // Recycler view variables
     private var recyclerView : RecyclerView? = null
-    private var recyclerViewThemeAdapter : RecyclerViewThemeAdapter? = null
+    private var recyclerViewThemeAdapter : ThemeAdapter? = null
     private var themeList = mutableListOf<Theme>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +38,7 @@ class ThemesActivity : DrawerBaseActivity() {
         // Recycler view implementation
         themeList = ArrayList()
         recyclerView = findViewById<View>(R.id.rvThemeList) as RecyclerView
-        recyclerViewThemeAdapter = RecyclerViewThemeAdapter(this, themeList)
+        recyclerViewThemeAdapter = ThemeAdapter(this, themeList)
 
         // Renders recycler view with two columns
         val layoutManager : RecyclerView.LayoutManager = GridLayoutManager(this, 2)

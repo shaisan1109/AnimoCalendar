@@ -6,12 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewThemeAdapter (private val getActivity: ThemesActivity, private val themeList : List<Theme>) :
-    RecyclerView.Adapter<RecyclerViewThemeAdapter.ThemesViewHolder>() {
+class ThemeAdapter (private val getActivity: ThemesActivity, private val themeList : List<Theme>) :
+    RecyclerView.Adapter<ThemeAdapter.ThemesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ThemesViewHolder {
         // Set layout for theme card
