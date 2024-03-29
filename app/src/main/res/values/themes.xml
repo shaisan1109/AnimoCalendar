@@ -7,11 +7,6 @@
         </item> <!-- Color used on system bar -->
         <item name="colorOnPrimary">@color/light_txt</item>
 
-        <!-- Secondary brand color -->
-        <item name="colorSecondary">@color/light_accent</item>
-        <item name="colorSecondaryVariant">@color/light_accent</item>
-        <item name="colorOnSecondary">@color/light_txt</item>
-
         <!-- Background color -->
         <item name="android:colorBackground">@color/light_bg</item>
         <item name="colorOnBackground">@color/light_accent_txt
@@ -50,11 +45,6 @@
         <item name="colorPrimaryVariant">@color/hw_accent_variant</item>
         <item name="colorOnPrimary">@color/white</item>
 
-        <!-- Secondary brand color -->
-        <item name="colorSecondary">@color/hw_accent</item>
-        <item name="colorSecondaryVariant">@color/hw_accent</item>
-        <item name="colorOnSecondary">@color/white</item>
-
         <!-- Background color -->
         <item name="android:colorBackground">@color/hw_bg</item>
         <item name="colorOnBackground">@color/hw_accent_txt</item> <!-- TODO -->
@@ -69,11 +59,6 @@
         <item name="colorPrimaryVariant">@color/val_accent_variant</item>
         <item name="colorOnPrimary">@color/white</item>
 
-        <!-- Secondary brand color -->
-        <item name="colorSecondary">@color/val_accent</item>
-        <item name="colorSecondaryVariant">@color/val_accent</item>
-        <item name="colorOnSecondary">@color/white</item>
-
         <!-- Background color -->
         <item name="android:colorBackground">@color/val_bg</item>
         <item name="colorOnBackground">@color/val_accent</item> <!-- TODO -->
@@ -87,11 +72,6 @@
         <item name="colorPrimary">@color/xmas_accent</item>
         <item name="colorPrimaryVariant">@color/xmas_accent_variant</item>
         <item name="colorOnPrimary">@color/white</item> <!-- TODO -->
-
-        <!-- Secondary brand color -->
-        <item name="colorSecondary">@color/xmas_accent</item>
-        <item name="colorSecondaryVariant">@color/xmas_accent</item>
-        <item name="colorOnSecondary">@color/white</item>
 
         <!-- Background color -->
         <item name="android:colorBackground">@color/xmas_bg</item>
