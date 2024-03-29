@@ -11,6 +11,12 @@ class CreateThemeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreateThemeBinding.inflate(layoutInflater)
+
+        // Set theme for activity
+        val themeEditor = getSharedPreferences("theme", MODE_PRIVATE)
+        MainActivity.themeIndex = themeEditor.getInt("themeIndex", 0)
+        setTheme(MainActivity.themesList[MainActivity.themeIndex])
+
         setContentView(binding.root)
     }
 }

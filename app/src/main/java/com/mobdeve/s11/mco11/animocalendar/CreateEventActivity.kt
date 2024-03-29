@@ -11,6 +11,12 @@ class CreateEventActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreateEventBinding.inflate(layoutInflater)
+
+        // Set theme for activity
+        val themeEditor = getSharedPreferences("theme", MODE_PRIVATE)
+        MainActivity.themeIndex = themeEditor.getInt("themeIndex", 0)
+        setTheme(MainActivity.themesList[MainActivity.themeIndex])
+
         val view = binding.root
         setContentView(binding.root)
     }

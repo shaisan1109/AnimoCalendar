@@ -1,5 +1,6 @@
 package com.mobdeve.s11.mco11.animocalendar
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -20,6 +21,12 @@ class ThemesActivity : DrawerBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityThemesBinding.inflate(layoutInflater)
+
+        // Set theme for activity
+        val themeEditor = getSharedPreferences("theme", MODE_PRIVATE)
+        MainActivity.themeIndex = themeEditor.getInt("themeIndex", 0)
+        setTheme(MainActivity.themesList[MainActivity.themeIndex])
+
         setContentView(binding.root)
         allocateActivityTitle("Themes")
         enableEdgeToEdge()
@@ -46,19 +53,19 @@ class ThemesActivity : DrawerBaseActivity() {
 
     // Not exactly the best function atm; replace with data helper or DB data later
     private fun prepareThemeListData() {
-        var theme = Theme("light", "Light Mode", R.drawable.theme_light)
+        var theme = Theme(0, "Light Mode", R.drawable.theme_light)
         themeList.add(theme)
 
-        theme = Theme("dark", "Dark Mode", R.drawable.theme_dark)
+        theme = Theme(1, "Dark Mode", R.drawable.theme_dark)
         themeList.add(theme)
 
-        theme = Theme("halloween", "Halloween", R.drawable.theme_halloween)
+        theme = Theme(2, "Halloween", R.drawable.theme_halloween)
         themeList.add(theme)
 
-        theme = Theme("valentines", "Valentines", R.drawable.theme_valentines)
+        theme = Theme(3, "Valentines", R.drawable.theme_valentines)
         themeList.add(theme)
 
-        theme = Theme("xmas", "Christmas", R.drawable.theme_xmas)
+        theme = Theme(4, "Christmas", R.drawable.theme_xmas)
         themeList.add(theme)
 
         recyclerViewThemeAdapter!!.notifyDataSetChanged()

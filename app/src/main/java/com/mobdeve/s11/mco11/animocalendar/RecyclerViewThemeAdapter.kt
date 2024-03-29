@@ -1,10 +1,12 @@
 package com.mobdeve.s11.mco11.animocalendar
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -27,8 +29,13 @@ class RecyclerViewThemeAdapter (private val getActivity: ThemesActivity, private
         holder.themeName.text = themeList[position].name
         holder.themeImg.setImageResource(themeList[position].image)
 
+        // Each button sets the theme index through its ID
         holder.themeCard.setOnClickListener {
-            // TODO: Add function to change theme upon tapping option
+            holder.prefs.edit().putInt("themeIndex", themeList[position].id).apply()
+
+            // Restart activity after appearance is set
+            //finish()
+            //startActivity(intent)
         }
     }
 
@@ -36,6 +43,16 @@ class RecyclerViewThemeAdapter (private val getActivity: ThemesActivity, private
         val themeName : TextView = itemView.findViewById(R.id.themeName)
         val themeImg : ImageView = itemView.findViewById(R.id.themeImg)
         val themeCard : CardView = itemView.findViewById(R.id.themeCard)
+
+        val prefs = itemView.context.getSharedPreferences("theme", Context.MODE_PRIVATE)
     }
 
+//    private fun saveTheme(index: Int) {
+//        val editor = getSharedPreferences("Themes", AppCompatActivity.MODE_PRIVATE).edit()
+//        editor.putInt("themeIndex", index)
+//
+//        // Restart activity after appearance is set
+//        finish()
+//        startActivity(intent)
+//    }
 }

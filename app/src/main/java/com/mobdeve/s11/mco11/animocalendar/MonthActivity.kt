@@ -22,6 +22,12 @@ class MonthActivity : DrawerBaseActivity(), MyAdapter.OnItemListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMonthBinding.inflate(layoutInflater)
+
+        // Set theme for activity
+        val themeEditor = getSharedPreferences("theme", MODE_PRIVATE)
+        MainActivity.themeIndex = themeEditor.getInt("themeIndex", 0)
+        setTheme(MainActivity.themesList[MainActivity.themeIndex])
+
         setContentView(binding.root)
         allocateActivityTitle("Month View")
 

@@ -17,7 +17,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
             android:text="Category"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eventLoc" />
@@ -71,7 +71,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="25dp"
             android:text="Repeat"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_event_cat_header" />
@@ -112,7 +112,7 @@
             android:layout_marginTop="44dp"
             android:fontFamily="@font/inter_bold"
             android:text="EVENT NAME"
-            android:textColor="#000000"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/eventColor"
             app:layout_constraintTop_toTopOf="parent" />
@@ -126,7 +126,8 @@
             android:text="Start"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/eventColor" />
+            app:layout_constraintTop_toBottomOf="@+id/eventColor"
+            android:textColor="?attr/colorOutline"/>
 
         <TextView
             android:id="@+id/eventStartDate"
@@ -135,7 +136,7 @@
             android:layout_marginStart="54dp"
             android:layout_marginTop="20dp"
             android:text="Wed, Feb 14"
-            android:textColor="#000000"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/tv_event_start"
             app:layout_constraintTop_toBottomOf="@+id/eventColor" />
@@ -147,7 +148,7 @@
             android:layout_marginStart="63dp"
             android:layout_marginTop="15dp"
             android:text="Wed, Feb 14"
-            android:textColor="#000000"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/tv_event_end"
             app:layout_constraintTop_toBottomOf="@+id/eventStartDate" />
@@ -159,7 +160,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:text="8:00 AM"
-            android:textColor="#000000"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/eventStartDate"
             app:layout_constraintTop_toBottomOf="@+id/eventColor" />
@@ -171,7 +172,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="16dp"
             android:text="9:30 AM"
-            android:textColor="#000000"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/eventEndDate"
             app:layout_constraintTop_toBottomOf="@+id/eventStartTime" />
@@ -183,7 +184,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="27dp"
             android:text="Event Host / Important Person"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eventEndDate" />
@@ -195,7 +196,7 @@
             android:layout_marginStart="14dp"
             android:layout_marginTop="22dp"
             android:text="Juan Dela Cruz"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/eventUser"
             app:layout_constraintTop_toBottomOf="@+id/tv_created_by" />
@@ -217,7 +218,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="27dp"
             android:text="Event Description"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eventUser" />
@@ -232,7 +233,8 @@
             android:text="This user hasn’t placed a description for this event yet. "
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_event_desc_header" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_desc_header"
+            android:textColor="?attr/colorCalendarText"/>
 
         <TextView
             android:id="@+id/tv_event_loc_header"
@@ -241,7 +243,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="15dp"
             android:text="Event Location"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eventDesc" />
@@ -254,7 +256,8 @@
             android:layout_marginTop="3dp"
             android:text="No location set"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_event_loc_header" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_loc_header"
+            android:textColor="?attr/colorOutline"/>
 
         <TextView
             android:id="@+id/tv_event_end"
@@ -265,7 +268,8 @@
             android:text="End"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_event_start" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_start"
+            android:textColor="?attr/colorOutline"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

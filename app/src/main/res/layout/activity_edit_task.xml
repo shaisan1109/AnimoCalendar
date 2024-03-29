@@ -32,7 +32,7 @@
                 android:layout_height="32dp"
                 android:layout_marginTop="24dp"
                 android:text="TextView"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorCalendarText"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +76,7 @@
                 android:layout_marginStart="52dp"
                 android:layout_marginTop="4dp"
                 android:text="Created By:"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorCalendarText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,7 +97,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="TextView"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorCalendarText"
                 app:layout_constraintStart_toEndOf="@+id/pfpTaskCreator"
                 app:layout_constraintTop_toBottomOf="@+id/createdTaskMaker" />
 
@@ -107,7 +107,7 @@
                 android:layout_height="22dp"
                 android:layout_marginTop="8dp"
                 android:text="Task Description:"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorCalendarText"
                 app:layout_constraintTop_toBottomOf="@+id/pfpTaskCreator"
                 tools:layout_editor_absoluteX="51dp" />
 
@@ -117,7 +117,7 @@
                 android:layout_height="71dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorCalendarText"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/taskDescription"
                 tools:layout_editor_absoluteX="50dp" />
@@ -137,7 +137,7 @@
                 android:layout_marginStart="48dp"
                 android:layout_marginTop="8dp"
                 android:text="Task Priority"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorCalendarText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -225,7 +225,7 @@
                 android:layout_marginStart="48dp"
                 android:layout_marginTop="16dp"
                 android:text="Category"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorCalendarText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>

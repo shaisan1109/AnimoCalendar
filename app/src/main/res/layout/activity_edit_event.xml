@@ -17,6 +17,7 @@
             android:layout_marginTop="35dp"
             android:layout_marginEnd="40dp"
             android:backgroundTint="?attr/colorPrimary"
+            android:textColor="?attr/colorCalendarText"
             android:ems="10"
             android:fontFamily="@font/inter_bold"
             android:hint="Event Name"
@@ -47,7 +48,8 @@
             android:text="Start"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editEventColor" />
+            app:layout_constraintTop_toBottomOf="@+id/editEventColor"
+            android:textColor="?attr/colorOutline"/>
 
         <TextView
             android:id="@+id/editEventStartDate"
@@ -56,7 +58,7 @@
             android:layout_marginStart="54dp"
             android:layout_marginTop="20dp"
             android:text="Wed, Feb 14"
-            android:textColor="#000000"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/tv_event_start"
             app:layout_constraintTop_toBottomOf="@+id/editEventColor" />
@@ -68,7 +70,7 @@
             android:layout_marginStart="63dp"
             android:layout_marginTop="15dp"
             android:text="Wed, Feb 14"
-            android:textColor="#000000"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/tv_event_end"
             app:layout_constraintTop_toBottomOf="@+id/editEventStartDate" />
@@ -80,7 +82,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:text="8:00 AM"
-            android:textColor="#000000"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/editEventStartDate"
             app:layout_constraintTop_toBottomOf="@+id/editEventColor" />
@@ -92,7 +94,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="16dp"
             android:text="9:30 AM"
-            android:textColor="#000000"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/editEventEndDate"
             app:layout_constraintTop_toBottomOf="@+id/editEventStartTime" />
@@ -104,7 +106,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="27dp"
             android:text="Event Host / Important Person"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editEventEndDate" />
@@ -131,7 +133,8 @@
             android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/editEventUser"
             app:layout_constraintTop_toBottomOf="@+id/tv_created_by"
-            android:backgroundTint="?attr/colorPrimary" />
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="?attr/colorCalendarText"/>
 
         <TextView
             android:id="@+id/tv_event_desc_header"
@@ -140,7 +143,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="27dp"
             android:text="Event Description"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editEventUser" />
@@ -159,7 +162,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_event_desc_header"
-            android:backgroundTint="?attr/colorPrimary" />
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="?attr/colorCalendarText"/>
 
         <TextView
             android:id="@+id/tv_event_loc_header"
@@ -168,7 +172,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="15dp"
             android:text="Event Location"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editEventDesc" />
@@ -184,7 +188,8 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_event_loc_header"
-            android:backgroundTint="?attr/colorPrimary" />
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="?attr/colorCalendarText"/>
 
         <TextView
             android:id="@+id/tv_event_end"
@@ -195,7 +200,8 @@
             android:text="End"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_event_start" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_event_start"
+            android:textColor="?attr/colorOutline"/>
 
         <TextView
             android:id="@+id/tv_event_cat_header"
@@ -204,7 +210,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
             android:text="Category"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editEventLoc" />
@@ -258,7 +264,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="25dp"
             android:text="Repeat"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorCalendarText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_event_cat_header" />
@@ -269,7 +275,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="75dp"
             android:layout_marginBottom="40dp"
-            android:backgroundTint="@color/light_outline"
+            android:backgroundTint="?attr/colorOutlineVariant"
             android:stateListAnimator="@null"
             android:text="CANCEL"
             app:cornerRadius="7dp"
@@ -282,7 +288,7 @@
             android:layout_height="50dp"
             android:layout_marginEnd="75dp"
             android:layout_marginBottom="40dp"
-            android:backgroundTint="@color/light_accent"
+            android:backgroundTint="?attr/colorPrimary"
             android:stateListAnimator="@null"
             android:text="SAVE"
             app:cornerRadius="7dp"

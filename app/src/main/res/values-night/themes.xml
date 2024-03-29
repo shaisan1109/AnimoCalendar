@@ -19,6 +19,7 @@
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/inter</item>
     </style>
+
     <!-- Base application theme. -->
     <style name="Base.Theme.AnimoCalendar" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
