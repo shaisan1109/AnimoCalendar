@@ -3,7 +3,8 @@
     <style name="Theme.AnimoCalendar" parent="Theme.Material3.Light">
         <!-- Primary brand color -->
         <item name="colorPrimary">@color/light_accent</item>
-        <item name="colorPrimaryVariant">@color/light_accent_variant</item> <!-- Color used on system bar -->
+        <item name="colorPrimaryVariant">@color/light_accent_variant
+        </item> <!-- Color used on system bar -->
         <item name="colorOnPrimary">@color/light_txt</item>
 
         <!-- Secondary brand color -->
@@ -13,15 +14,21 @@
 
         <!-- Background color -->
         <item name="android:colorBackground">@color/light_bg</item>
-        <item name="colorOnBackground">@color/light_accent_txt</item> <!-- Color used on navbar (on the side) -->
+        <item name="colorOnBackground">@color/light_accent_txt
+        </item> <!-- Color used on navbar (on the side) -->
         <item name="colorCalendarText">@color/black</item> <!-- Color used on calendar text -->
-        <item name="colorCalendarOutline">@color/light_outline</item> <!-- Color used for calendar outline -->
+        <item name="colorCalendarOutline">@color/light_outline
+        </item> <!-- Color used for calendar outline -->
 
         <!-- System bar color (bar with time, battery, etc.) -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
 
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/inter</item>
+
+        <!-- Important: Prevents crashing -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
 
@@ -91,5 +98,10 @@
         <item name="colorOnBackground">@color/xmas_accent</item> <!-- TODO -->
         <item name="colorCalendarText">@color/white</item>
         <item name="colorCalendarOutline">@color/xmas_outline</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AnimoCalendar" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 </resources>
