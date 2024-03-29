@@ -40,24 +40,9 @@ open class DrawerBaseActivity : AppCompatActivity(), NavigationView.OnNavigation
             R.id.nav_month -> startActivityWithTransition(MonthActivity::class.java)
             R.id.nav_week -> startActivityWithTransition(WeekActivity::class.java)
             R.id.nav_day -> startActivityWithTransition(DayActivity::class.java)
-            R.id.nav_preferences -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.activityContainer, PreferencesFragment()) // add fragment to activity container
-                    .addToBackStack(null) //add transaction to back stack
-                    .commit()
-            }
-            R.id.nav_change_theme -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.activityContainer, ThemesFragment())
-                    .addToBackStack(null)
-                    .commit()
-            }
-            R.id.nav_help -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.activityContainer, HelpFragment())
-                    .addToBackStack(null)
-                    .commit()
-            }
+            R.id.nav_help -> startActivityWithTransition(HelpActivity::class.java)
+            R.id.nav_preferences -> startActivityWithTransition(PreferencesActivity::class.java)
+            R.id.nav_change_theme -> startActivityWithTransition(ThemesActivity::class.java)
         }
         return false
     }

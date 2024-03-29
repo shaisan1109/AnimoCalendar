@@ -30,13 +30,13 @@
     <!-- Settings group -->
     <fragment
         android:id="@+id/nav_preferences"
-        android:name="com.mobdeve.s11.mco11.animocalendar.PreferencesFragment"
+        android:name="com.mobdeve.s11.mco11.animocalendar.PreferencesActivity"
         android:label="Preferences"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_change_theme"
-        android:name="com.mobdeve.s11.mco11.animocalendar.ThemesFragment"
+        android:name="com.mobdeve.s11.mco11.animocalendar.ThemesActivity"
         android:label="Change Calendar Theme"
         tools:layout="@layout/fragment_home" />
 

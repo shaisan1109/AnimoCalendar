@@ -34,9 +34,16 @@
             android:exported="false" />
         <activity
             android:name=".MonthActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AnimoCalendar.NoActionBar" />
-
+            android:exported="false" />
+        <activity
+            android:name=".HelpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PreferencesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ThemesActivity"
+            android:exported="false" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
