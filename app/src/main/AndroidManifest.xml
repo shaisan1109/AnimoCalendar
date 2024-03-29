@@ -44,6 +44,27 @@
         <activity
             android:name=".ThemesActivity"
             android:exported="false" />
+        <activity
+            android:name=".EditTaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditEventActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateEventActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewEventActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateThemeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewTaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateTaskActivity"
+            android:exported="false" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
