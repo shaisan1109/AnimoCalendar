@@ -117,6 +117,7 @@
                 android:layout_height="71dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/taskDescription"
                 tools:layout_editor_absoluteX="50dp" />
