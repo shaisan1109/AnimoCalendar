@@ -6,11 +6,10 @@
     app:startDestination="@+id/nav_year">
 
     <!-- Calendar group -->
-    <fragment
+    <activity
         android:id="@+id/nav_year"
-        android:name="com.mobdeve.s11.mco11.animocalendar.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.mobdeve.s11.mco11.animocalendar.MainActivity"
+        android:label="2024" />
 
     <activity
         android:id="@+id/nav_month"
@@ -28,22 +27,19 @@
         android:label="JANUARY 2024" />
 
     <!-- Settings group -->
-    <fragment
+    <activity
         android:id="@+id/nav_preferences"
         android:name="com.mobdeve.s11.mco11.animocalendar.PreferencesActivity"
-        android:label="Preferences"
-        tools:layout="@layout/fragment_home" />
+        android:label="Preferences" />
 
-    <fragment
+    <activity
         android:id="@+id/nav_change_theme"
         android:name="com.mobdeve.s11.mco11.animocalendar.ThemesActivity"
-        android:label="Change Calendar Theme"
-        tools:layout="@layout/fragment_home" />
+        android:label="Change Calendar Theme" />
 
     <!-- Miscellaneous group -->
-    <fragment
+    <activity
         android:id="@+id/nav_help"
-        android:name="com.mobdeve.s11.mco11.animocalendar.HelpFragment"
-        android:label="Help"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.mobdeve.s11.mco11.animocalendar.HelpActivity"
+        android:label="Help" />
 </navigation>
