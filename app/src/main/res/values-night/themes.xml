@@ -15,12 +15,18 @@
         <item name="android:colorBackground">@color/black</item>
         <item name="colorOnBackground">@color/white</item> <!-- Color used on navbar -->
         <item name="colorCalendarText">@color/white</item> <!-- Color used on calendar -->
-        <item name="colorCalendarOutline">@color/dark_outline</item> <!-- Color used for calendar outline -->
+        <item name="colorCalendarOutline">@color/dark_outline
+        </item> <!-- Color used for calendar outline -->
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
 
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/inter</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AnimoCalendar" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 </resources>
