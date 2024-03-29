@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <EditText
-            android:id="@+id/input_theme_name"
+            android:id="@+id/inputThemeName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/prev_bg_color"
+            android:id="@+id/prevBgColor"
             android:layout_width="50dp"
             android:layout_height="35dp"
             android:layout_marginStart="200dp"
@@ -36,10 +36,10 @@
             android:stateListAnimator="@null"
             app:cornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_style_header" />
+            app:layout_constraintTop_toBottomOf="@+id/styleHeader" />
 
         <ImageButton
-            android:id="@+id/btn_bg_color"
+            android:id="@+id/btnBgColor"
             android:layout_width="33dp"
             android:layout_height="33dp"
             android:layout_marginStart="5dp"
@@ -48,12 +48,12 @@
             android:background="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/baseline_colorize_24"
-            app:layout_constraintStart_toEndOf="@+id/prev_bg_color"
-            app:layout_constraintTop_toBottomOf="@+id/tv_style_header"
+            app:layout_constraintStart_toEndOf="@+id/prevBgColor"
+            app:layout_constraintTop_toBottomOf="@+id/styleHeader"
             app:tint="?attr/colorCalendarOutline" />
 
         <Button
-            android:id="@+id/prev_accent_color"
+            android:id="@+id/prevAccentColor"
             android:layout_width="50dp"
             android:layout_height="35dp"
             android:layout_marginStart="200dp"
@@ -62,10 +62,10 @@
             android:stateListAnimator="@null"
             app:cornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/prev_bg_color" />
+            app:layout_constraintTop_toBottomOf="@+id/prevBgColor" />
 
         <ImageButton
-            android:id="@+id/btn_accent_color"
+            android:id="@+id/btnAccentColor"
             android:layout_width="33dp"
             android:layout_height="33dp"
             android:layout_marginStart="5dp"
@@ -74,12 +74,12 @@
             android:background="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/baseline_colorize_24"
-            app:layout_constraintStart_toEndOf="@+id/prev_accent_color"
-            app:layout_constraintTop_toBottomOf="@+id/btn_bg_color"
+            app:layout_constraintStart_toEndOf="@+id/prevAccentColor"
+            app:layout_constraintTop_toBottomOf="@+id/btnBgColor"
             app:tint="?attr/colorCalendarOutline" />
 
         <Button
-            android:id="@+id/prev_hlight_color"
+            android:id="@+id/prevHlightColor"
             android:layout_width="50dp"
             android:layout_height="35dp"
             android:layout_marginStart="200dp"
@@ -88,10 +88,10 @@
             android:stateListAnimator="@null"
             app:cornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/prev_accent_color" />
+            app:layout_constraintTop_toBottomOf="@+id/prevAccentColor" />
 
         <ImageButton
-            android:id="@+id/btn_hlight_color"
+            android:id="@+id/btnHlightColor"
             android:layout_width="33dp"
             android:layout_height="33dp"
             android:layout_marginStart="5dp"
@@ -100,12 +100,12 @@
             android:background="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/baseline_colorize_24"
-            app:layout_constraintStart_toEndOf="@+id/prev_outline_color"
-            app:layout_constraintTop_toBottomOf="@+id/btn_accent_color"
+            app:layout_constraintStart_toEndOf="@+id/prevOutlineColor"
+            app:layout_constraintTop_toBottomOf="@+id/btnAccentColor"
             app:tint="?attr/colorCalendarOutline" />
 
         <Button
-            android:id="@+id/prev_outline_color"
+            android:id="@+id/prevOutlineColor"
             android:layout_width="50dp"
             android:layout_height="35dp"
             android:layout_marginStart="200dp"
@@ -114,10 +114,10 @@
             android:stateListAnimator="@null"
             app:cornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/prev_hlight_color" />
+            app:layout_constraintTop_toBottomOf="@+id/prevHlightColor" />
 
         <ImageButton
-            android:id="@+id/btn_outline_color"
+            android:id="@+id/btnOutlineColor"
             android:layout_width="33dp"
             android:layout_height="33dp"
             android:layout_marginStart="5dp"
@@ -126,12 +126,12 @@
             android:background="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/baseline_colorize_24"
-            app:layout_constraintStart_toEndOf="@+id/prev_hlight_color"
-            app:layout_constraintTop_toBottomOf="@+id/btn_hlight_color"
+            app:layout_constraintStart_toEndOf="@+id/prevHlightColor"
+            app:layout_constraintTop_toBottomOf="@+id/btnHlightColor"
             app:tint="?attr/colorCalendarOutline" />
 
         <Button
-            android:id="@+id/prev_main_text_color"
+            android:id="@+id/prevMainText"
             android:layout_width="50dp"
             android:layout_height="35dp"
             android:layout_marginStart="200dp"
@@ -143,7 +143,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_text_header" />
 
         <ImageButton
-            android:id="@+id/btn_main_text_color"
+            android:id="@+id/btnMainText"
             android:layout_width="33dp"
             android:layout_height="33dp"
             android:layout_marginStart="5dp"
@@ -152,12 +152,12 @@
             android:background="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/baseline_colorize_24"
-            app:layout_constraintStart_toEndOf="@+id/prev_main_text_color"
+            app:layout_constraintStart_toEndOf="@+id/prevMainText"
             app:layout_constraintTop_toBottomOf="@+id/tv_text_header"
             app:tint="?attr/colorCalendarOutline" />
 
         <Button
-            android:id="@+id/prev_hlight_text_color"
+            android:id="@+id/prevHlightText"
             android:layout_width="50dp"
             android:layout_height="35dp"
             android:layout_marginStart="200dp"
@@ -166,10 +166,10 @@
             android:stateListAnimator="@null"
             app:cornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/prev_main_text_color" />
+            app:layout_constraintTop_toBottomOf="@+id/prevMainText" />
 
         <ImageButton
-            android:id="@+id/btn_hlight_text_color"
+            android:id="@+id/btnHlightText"
             android:layout_width="33dp"
             android:layout_height="33dp"
             android:layout_marginStart="5dp"
@@ -178,12 +178,12 @@
             android:background="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/baseline_colorize_24"
-            app:layout_constraintStart_toEndOf="@+id/prev_hlight_text_color"
-            app:layout_constraintTop_toBottomOf="@+id/btn_main_text_color"
+            app:layout_constraintStart_toEndOf="@+id/prevHlightText"
+            app:layout_constraintTop_toBottomOf="@+id/btnMainText"
             app:tint="?attr/colorCalendarOutline" />
 
         <TextView
-            android:id="@+id/tv_style_header"
+            android:id="@+id/styleHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
@@ -191,10 +191,10 @@
             android:fontFamily="@font/inter_bold"
             android:text="CALENDAR STYLE"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_theme_name" />
+            app:layout_constraintTop_toBottomOf="@+id/inputThemeName" />
 
         <View
-            android:id="@+id/hl_style_header"
+            android:id="@+id/styleHl"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginStart="25dp"
@@ -202,7 +202,7 @@
             android:background="#848282"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_style_header" />
+            app:layout_constraintTop_toBottomOf="@+id/styleHeader" />
 
         <TextView
             android:id="@+id/tv_bg_color"
@@ -214,7 +214,7 @@
             android:textColor="#000000"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_style_header" />
+            app:layout_constraintTop_toBottomOf="@+id/styleHeader" />
 
         <TextView
             android:id="@+id/tv_accent_color"
@@ -299,7 +299,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_main_text_color" />
 
         <Button
-            android:id="@+id/btn_create_theme_cancel"
+            android:id="@+id/createThemeCancel"
             android:layout_width="110dp"
             android:layout_height="50dp"
             android:layout_marginStart="75dp"
@@ -312,7 +312,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_hlight_text_color" />
 
         <Button
-            android:id="@+id/btn_create_theme_save"
+            android:id="@+id/createThemeSave"
             android:layout_width="110dp"
             android:layout_height="50dp"
             android:layout_marginTop="65dp"
