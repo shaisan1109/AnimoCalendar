@@ -1,6 +1,3 @@
-package com.mobdeve.s11.mco11.animocalendar
-
-import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Context
 import android.content.DialogInterface
@@ -16,13 +13,14 @@ import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.google.android.gms.tasks.Task
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.google.firebase.firestore.DocumentReference
+import androidx.fragment.app.DialogFragment
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
+import com.mobdeve.s11.mco11.animocalendar.OnDialogCloseListener
+import com.mobdeve.s11.mco11.animocalendar.R
 import java.util.*
 
-class AddNewTask : BottomSheetDialogFragment() {
+class AddNewTask : DialogFragment() {
 
     companion object {
         const val TAG = "AddNewTask"
@@ -38,6 +36,8 @@ class AddNewTask : BottomSheetDialogFragment() {
     private lateinit var firestore: FirebaseFirestore
     private lateinit var context: Context
     private var dueDate: String = ""
+    private var id = ""
+    private var dueDateUpdate = ""
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.add_new_task, container, false)
@@ -51,6 +51,24 @@ class AddNewTask : BottomSheetDialogFragment() {
         mSaveBtn = view.findViewById(R.id.saveBtn)
 
         firestore = FirebaseFirestore.getInstance()
+
+        var isUpdate = false
+
+        val bundle = arguments
+        if (bundle != null) {
+            isUpdate = true
+            val task = bundle.getString("task")
+            id = bundle.getString("id")!!
+            dueDateUpdate = bundle.getString("due")!!
+
+            mTaskEdit.setText(task)
+            setDueDate.text = dueDateUpdate
+
+            if (task!!.length > 0) {
+                mSaveBtn.isEnabled = false
+                mSaveBtn.setBackgroundColor(Color.GRAY)
+            }
+        }
 
         mTaskEdit.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
@@ -85,25 +103,33 @@ class AddNewTask : BottomSheetDialogFragment() {
             datePickerDialog.show()
         }
 
+        val finalIsUpdate = isUpdate
         mSaveBtn.setOnClickListener {
             val task = mTaskEdit.text.toString()
 
-            if (task.isEmpty()) {
-                Toast.makeText(context, "Please add a task", Toast.LENGTH_SHORT).show()
+            if (finalIsUpdate) {
+                firestore.collection("task").document(id).update("task", task, "due", dueDate)
+                Toast.makeText(context, "Task Updated", Toast.LENGTH_SHORT).show()
             } else {
-                val taskMap = HashMap<String, Any>()
-                taskMap["task"] = task
-                taskMap["due"] = dueDate
-                taskMap["status"] = 0
+                if (task.isEmpty()) {
+                    Toast.makeText(context, "Please add a task", Toast.LENGTH_SHORT).show()
+                } else {
+                    val taskMap = hashMapOf<String, Any>()
+                    taskMap["task"] = task
+                    taskMap["due"] = dueDate
+                    taskMap["status"] = 0
+                    taskMap["time"] = FieldValue.serverTimestamp()
 
-                firestore.collection("task").add(taskMap).addOnCompleteListener { task: Task<DocumentReference> ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(context, "Task Saved", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(context, task.exception?.message, Toast.LENGTH_SHORT).show()
-                    }
-                }.addOnFailureListener { e: Exception ->
-                    Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
+                    firestore.collection("task").add(taskMap)
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                Toast.makeText(context, "Task Saved", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(context, task.exception?.message, Toast.LENGTH_SHORT).show()
+                            }
+                        }.addOnFailureListener { e ->
+                            Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
+                        }
                 }
             }
             dismiss()
