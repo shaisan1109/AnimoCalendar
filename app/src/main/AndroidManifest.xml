@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AnimoCalendar"
         tools:targetApi="31">
         <activity
+            android:name=".TasksActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
@@ -62,9 +65,7 @@
         <activity
             android:name=".ViewTaskActivity"
             android:exported="false" />
-        <activity
-            android:name=".CreateTaskActivity"
-            android:exported="false" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

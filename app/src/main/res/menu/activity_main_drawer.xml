@@ -22,6 +22,10 @@
             android:id="@+id/nav_day"
             android:icon="@drawable/baseline_calendar_view_day_24"
             android:title="Day" />
+        <item
+            android:id="@+id/nav_tasks"
+            android:icon="@drawable/task"
+            android:title="Tasks" />
     </group>
     <group
         android:id="@+id/group_settings"

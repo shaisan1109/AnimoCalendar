@@ -43,6 +43,7 @@ open class DrawerBaseActivity : AppCompatActivity(), NavigationView.OnNavigation
             R.id.nav_help -> startActivityWithTransition(HelpActivity::class.java)
             R.id.nav_preferences -> startActivityWithTransition(PreferencesActivity::class.java)
             R.id.nav_change_theme -> startActivityWithTransition(ThemesActivity::class.java)
+            R.id.nav_tasks -> startActivityWithTransition(TasksActivity::class.java)
         }
         return false
     }
