@@ -1,6 +1,5 @@
 package com.mobdeve.s11.mco11.animocalendar
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import androidx.activity.enableEdgeToEdge
