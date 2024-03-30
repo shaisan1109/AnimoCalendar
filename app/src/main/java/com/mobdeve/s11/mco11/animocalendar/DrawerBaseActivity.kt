@@ -1,5 +1,6 @@
 package com.mobdeve.s11.mco11.animocalendar
 
+import CreateTaskActivity
 import android.content.Intent
 import android.view.MenuItem
 import android.view.View
@@ -55,13 +56,13 @@ open class DrawerBaseActivity : AppCompatActivity(), NavigationView.OnNavigation
         toggle.syncState()
 
         // Floating action buttons
-        val mainFab : FloatingActionButton = drawerLayout.findViewById(R.id.mainFab)
-        val taskFab : FloatingActionButton = drawerLayout.findViewById(R.id.fabAddTask)
-        val eventFab : FloatingActionButton = drawerLayout.findViewById(R.id.fabAddEvent)
-        val taskPrev : Button = drawerLayout.findViewById(R.id.btnAddTask)
-        val taskEvent : Button = drawerLayout.findViewById(R.id.btnAddEvent)
+        val mainFab: FloatingActionButton = drawerLayout.findViewById(R.id.mainFab)
+        val taskFab: FloatingActionButton = drawerLayout.findViewById(R.id.fabAddTask)
+        val eventFab: FloatingActionButton = drawerLayout.findViewById(R.id.fabAddEvent)
+        val taskPrev: Button = drawerLayout.findViewById(R.id.btnAddTask)
+        val taskEvent: Button = drawerLayout.findViewById(R.id.btnAddEvent)
 
-        // Floating action button onClick actions
+        // mainFab onClick animations
         mainFab.setOnClickListener {
             // If FAB menu is expanded already, tapping main FAB again shrinks menu
             if(isExpanded) {
@@ -70,10 +71,22 @@ open class DrawerBaseActivity : AppCompatActivity(), NavigationView.OnNavigation
                 spinClockFab(mainFab, taskFab, eventFab, taskPrev, taskEvent)
             }
         }
+
+        // Link to CreateTask
+        taskFab.setOnClickListener {
+            val intent = Intent(this, CreateTaskActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Link to CreateEvent
+        eventFab.setOnClickListener {
+            val intent = Intent(this, CreateEventActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     // FAB animation functions
-    private fun spinCounterFab(fabObj : FloatingActionButton, subObj1: FloatingActionButton,
+    private fun spinCounterFab(fabObj: FloatingActionButton, subObj1: FloatingActionButton,
                                subObj2: FloatingActionButton, subBtn1: Button, subBtn2: Button) {
         fabObj.startAnimation(rotateCounter)
 
@@ -92,7 +105,7 @@ open class DrawerBaseActivity : AppCompatActivity(), NavigationView.OnNavigation
         isExpanded = !isExpanded // flip value to reset variable
     }
 
-    private fun spinClockFab(fabObj : FloatingActionButton, subObj1: FloatingActionButton,
+    private fun spinClockFab(fabObj: FloatingActionButton, subObj1: FloatingActionButton,
                              subObj2: FloatingActionButton, subBtn1: Button, subBtn2: Button) {
         fabObj.startAnimation(rotateClockwise)
 
