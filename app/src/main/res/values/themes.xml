@@ -97,8 +97,8 @@
         <!-- Background color -->
         <item name="android:colorBackground">@color/val_bg</item>
         <item name="colorOnBackground">@color/val_accent</item> <!-- TODO -->
-        <item name="colorCalendarText">@color/white</item>
-        <item name="colorCalendarOutline">@color/val_outline</item>
+        <item name="colorCalendarText">#ac9991</item>
+        <item name="colorCalendarOutline">#D7CECA</item>
 
         <!-- System bar color (bar with time, battery, etc.) -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
@@ -121,8 +121,8 @@
         <!-- Background color -->
         <item name="android:colorBackground">@color/xmas_bg</item>
         <item name="colorOnBackground">@color/xmas_accent</item> <!-- TODO -->
-        <item name="colorCalendarText">@color/white</item>
-        <item name="colorCalendarOutline">@color/xmas_outline</item>
+        <item name="colorCalendarText">#94803d</item>
+        <item name="colorCalendarOutline">#C6B173</item>
 
         <!-- System bar color (bar with time, battery, etc.) -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
