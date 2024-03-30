@@ -35,8 +35,8 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddTask"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
         android:layout_gravity="bottom|end"
@@ -49,8 +49,8 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddEvent"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
         android:layout_gravity="bottom|end"
@@ -80,7 +80,7 @@
         android:backgroundTint="?attr/android:colorBackground"
         android:text="Add Event"
         android:textColor="?attr/colorOnBackground"
-        android:textSize="15sp"
+        android:textSize="18sp"
         app:strokeColor="?attr/colorOnBackground"
         app:strokeWidth="2dp"
         android:clickable="false"
@@ -96,7 +96,7 @@
         android:backgroundTint="?attr/android:colorBackground"
         android:text="Add Task"
         android:textColor="?attr/colorOnBackground"
-        android:textSize="15sp"
+        android:textSize="18sp"
         app:strokeColor="?attr/colorOnBackground"
         app:strokeWidth="2dp"
         android:clickable="false"
