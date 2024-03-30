@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "104386122244",
+    "project_id": "animocalendar",
+    "storage_bucket": "animocalendar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104386122244:android:26049f4b57496af7d11b51",
+        "android_client_info": {
+          "package_name": "com.mobdeve.s11.mco11.animocalendar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqEV2CVjQPRHuxm41TCF7yFAQEyy2UjOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
