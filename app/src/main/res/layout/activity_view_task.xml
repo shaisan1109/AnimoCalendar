@@ -1,14 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ViewTaskActivity">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout13"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout14"
+            android:layout_width="405dp"
+            android:layout_height="136dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/dispTaskColor"
+                android:layout_width="49dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dispTaskName"
+                android:layout_width="250dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="22dp"
+                android:text="MCO3 Deadline"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/dispTaskColor"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dispFinText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="24dp"
+                android:text="Finish By:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dispTaskColor" />
+
+            <EditText
+                android:id="@+id/dispDateToFinish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date"
+                app:layout_constraintStart_toEndOf="@+id/dispFinText"
+                app:layout_constraintTop_toBottomOf="@+id/dispTaskName" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout15"
+            android:layout_width="414dp"
+            android:layout_height="261dp"
+            tools:layout_editor_absoluteX="2dp"
+            tools:layout_editor_absoluteY="138dp">
+
+            <TextView
+                android:id="@+id/dispCreateText"
+                android:layout_width="134dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Created By:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/dispCreatePfp"
+                android:layout_width="51dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dispCreateText"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/dispCreateName"
+                android:layout_width="141dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Juan Dela Cruz"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/dispCreatePfp"
+                app:layout_constraintTop_toBottomOf="@+id/dispCreateText" />
+
+            <TextView
+                android:id="@+id/dispDesc"
+                android:layout_width="142dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Task Description:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dispCreatePfp" />
+
+            <TextView
+                android:id="@+id/dispDescContent"
+                android:layout_width="383dp"
+                android:layout_height="102dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="All functions in the MP must be implemented here!"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dispDesc" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout16"
+            android:layout_width="411dp"
+            android:layout_height="208dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="400dp">
+
+            <TextView
+                android:id="@+id/dispPrio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Priority: "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dispPrioAnswer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="32dp"
+                android:text="Urgent"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/dispPrio"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dispCat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Category: "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="90dp" />
+
+            <TextView
+                android:id="@+id/dispCatAnswer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="28dp"
+                android:text="Academic"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/dispCat"
+                app:layout_constraintTop_toBottomOf="@+id/dispPrioAnswer" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout17"
+            android:layout_width="409dp"
+            android:layout_height="121dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="609dp">
+
+            <Button
+                android:id="@+id/dispEdt"
+                android:layout_width="116dp"
+                android:layout_height="47dp"
+                android:text="EDIT"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
