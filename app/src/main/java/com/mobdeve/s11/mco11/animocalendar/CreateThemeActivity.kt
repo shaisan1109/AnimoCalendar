@@ -1,12 +1,14 @@
 package com.mobdeve.s11.mco11.animocalendar
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.mobdeve.s11.mco11.animocalendar.databinding.ActivityCreateThemeBinding
 
 class CreateThemeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCreateThemeBinding
+    private lateinit var cancelBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,5 +20,10 @@ class CreateThemeActivity : AppCompatActivity() {
         setTheme(MainActivity.themesList[MainActivity.themeIndex])
 
         setContentView(binding.root)
+
+        cancelBtn = findViewById(R.id.createThemeCancel)
+        cancelBtn.setOnClickListener {
+            finish()
+        }
     }
 }

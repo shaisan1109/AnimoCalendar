@@ -1,7 +1,9 @@
 package com.mobdeve.s11.mco11.animocalendar
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -16,6 +18,9 @@ class ThemesActivity : DrawerBaseActivity() {
     private var recyclerView : RecyclerView? = null
     private var recyclerViewThemeAdapter : ThemeAdapter? = null
     private var themeList = mutableListOf<Theme>()
+
+    // Create theme button
+    private lateinit var themeBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +53,13 @@ class ThemesActivity : DrawerBaseActivity() {
         recyclerView!!.adapter = recyclerViewThemeAdapter
 
         prepareThemeListData()
+
+        // Theme button connecting to CreateThemeActivity
+        themeBtn = findViewById(R.id.createThemeBtn)
+        themeBtn.setOnClickListener {
+            val intent = Intent(this, CreateThemeActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     // Not exactly the best function atm; replace with data helper or DB data later
