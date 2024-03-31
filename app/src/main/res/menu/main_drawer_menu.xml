@@ -37,10 +37,6 @@
                 android:icon="@drawable/baseline_settings_24"
                 android:title="Preferences" />
             <item
-                android:id="@+id/nav_sync"
-                android:icon="@drawable/baseline_sync_24"
-                android:title="Sync" />
-            <item
                 android:id="@+id/nav_change_theme"
                 android:icon="@drawable/baseline_color_lens_24"
                 android:title="Change Theme" />
@@ -54,9 +50,5 @@
                 android:id="@+id/nav_help"
                 android:icon="@drawable/baseline_help_24"
                 android:title="Help" />
-            <item
-                android:id="@+id/nav_feedback"
-                android:icon="@drawable/baseline_feedback_24"
-                android:title="Feedback" />
         </group>
 </menu>
