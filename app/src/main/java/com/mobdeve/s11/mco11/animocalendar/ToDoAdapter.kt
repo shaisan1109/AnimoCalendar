@@ -1,9 +1,8 @@
 package com.mobdeve.s11.mco11.animocalendar
 
-import AddNewTask
 import ToDoModel
 import android.content.Context
-import android.os.Bundle
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,7 @@ import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
+
 
 class ToDoAdapter(private val activity: TasksActivity, private val todoList: List<ToDoModel>, private val fragmentManager: FragmentManager) :
     RecyclerView.Adapter<ToDoAdapter.MyViewHolder>() {
@@ -38,23 +38,15 @@ class ToDoAdapter(private val activity: TasksActivity, private val todoList: Lis
     fun editTask(position: Int, fragmentManager: FragmentManager) {
         val toDoModel = todoList[position]
 
-        val bundle = Bundle().apply {
-            putString("task", toDoModel.taskName)
-            putString("due", toDoModel.dueDate)
-            putString("description", toDoModel.taskDescription)
-            putString("id", toDoModel.taskId)
+        val intent = Intent(activity, TasksActivity::class.java).apply {
+            putExtra("task", toDoModel.taskName)
+            putExtra("due", toDoModel.dueDate)
+            putExtra("description", toDoModel.taskDescription)
+            putExtra("id", toDoModel.taskId)
         }
 
-        val addNewTask = AddNewTask.newInstance()
-        addNewTask.arguments = bundle
-
-        fragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, addNewTask, AddNewTask.TAG)
-            .addToBackStack(null)
-            .commit()
+        activity.startActivity(intent)
     }
-
-
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val toDoModel = todoList[position]

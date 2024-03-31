@@ -1,6 +1,5 @@
 package com.mobdeve.s11.mco11.animocalendar
 
-import CreateTaskActivity
 import android.content.Intent
 import android.view.MenuItem
 import android.view.View
@@ -74,7 +73,7 @@ open class DrawerBaseActivity : AppCompatActivity(), NavigationView.OnNavigation
 
         // Link to CreateTask
         taskFab.setOnClickListener {
-            val intent = Intent(this, CreateTaskActivity::class.java)
+            val intent = Intent(this, TasksActivity::class.java)
             startActivity(intent)
         }
 

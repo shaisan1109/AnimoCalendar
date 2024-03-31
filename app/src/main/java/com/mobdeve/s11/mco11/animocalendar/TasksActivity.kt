@@ -1,7 +1,7 @@
 package com.mobdeve.s11.mco11.animocalendar
 
 import ToDoModel
-import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -13,7 +13,7 @@ import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
 
-class TasksActivity : AppCompatActivity(){
+class TasksActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var mFab: FloatingActionButton
@@ -23,7 +23,6 @@ class TasksActivity : AppCompatActivity(){
     private lateinit var mList: MutableList<ToDoModel>
     private lateinit var query: Query
     private lateinit var listenerRegistration: ListenerRegistration
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,10 +36,7 @@ class TasksActivity : AppCompatActivity(){
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         mFab.setOnClickListener {
-            val fragmentTransaction = supportFragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.fragment_container, AddNewTask.newInstance())
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
+            startActivity(Intent(this, AddTaskActivity::class.java))
         }
 
         mList = mutableListOf()
@@ -81,5 +77,3 @@ class TasksActivity : AppCompatActivity(){
         adapter.notifyDataSetChanged()
     }
 }
-
-

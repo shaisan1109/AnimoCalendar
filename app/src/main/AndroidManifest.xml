@@ -65,6 +65,9 @@
         <activity
             android:name=".ViewTaskActivity"
             android:exported="false" />
+        <activity
+            android:name=".AddTaskActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"
