@@ -20,7 +20,7 @@
                 android:id="@+id/mCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/light_accent"
+                android:buttonTint="?attr/colorPrimary"
                 android:paddingStart="10dp"
                 android:text="This is task 1"
                 app:layout_constraintEnd_toEndOf="parent"
