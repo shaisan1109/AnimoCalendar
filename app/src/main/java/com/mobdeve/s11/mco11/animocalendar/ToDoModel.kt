@@ -25,22 +25,22 @@ open class ToDoModel : TaskId() {
 
     @get:PropertyName("priority")
     @set:PropertyName("priority")
-    var priority: Priority = Priority.LOW // Default priority is LOW
+    var priority: Priority = Priority.Low
 
     @get:PropertyName("category")
     @set:PropertyName("category")
-    var category: Category = Category.PERSONAL // Default category is PERSONAL
+    var category: Category = Category.Personal
 
-    enum class Priority {
-        LOW,
-        MEDIUM,
-        HIGH,
-        URGENT
+    enum class Priority(val displayName: String) {
+        Low("Low"),
+        Medium("Medium"),
+        High("High"),
+        Urgent("Urgent")
     }
 
-    enum class Category {
-        PERSONAL,
-        ACADEMIC,
-        HOLIDAY
+    enum class Category(val displayName: String) {
+        Personal("Personal"),
+        Academic("Academic"),
+        Holiday("Holiday")
     }
 }

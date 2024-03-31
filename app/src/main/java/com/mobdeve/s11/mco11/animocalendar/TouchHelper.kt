@@ -23,7 +23,7 @@ class TouchHelper(private val adapter: ToDoAdapter, private val fragmentManager:
                 .create()
                 .show()
         } else {
-            adapter.editTask(position, fragmentManager)
+            adapter.viewTask(position, fragmentManager)
         }
     }
 }

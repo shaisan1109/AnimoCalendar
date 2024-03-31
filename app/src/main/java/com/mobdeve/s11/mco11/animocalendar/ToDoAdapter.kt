@@ -35,13 +35,16 @@ class ToDoAdapter(private val activity: TasksActivity, private val todoList: Lis
         return activity
     }
 
-    fun editTask(position: Int, fragmentManager: FragmentManager) {
+    fun viewTask(position: Int, fragmentManager: FragmentManager) {
         val toDoModel = todoList[position]
 
-        val intent = Intent(activity, TasksActivity::class.java).apply {
+        val intent = Intent(activity, ViewTaskActivity::class.java).apply {
             putExtra("task", toDoModel.taskName)
             putExtra("due", toDoModel.dueDate)
             putExtra("description", toDoModel.taskDescription)
+            putExtra("host", toDoModel.host)
+            putExtra("priority", toDoModel.priority.name)
+            putExtra("category", toDoModel.category.name)
             putExtra("id", toDoModel.taskId)
         }
 

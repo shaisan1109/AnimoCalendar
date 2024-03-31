@@ -36,7 +36,7 @@ class TasksActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         mFab.setOnClickListener {
-            startActivity(Intent(this, AddTaskActivity::class.java))
+            startActivity(Intent(this, CreateTaskActivity::class.java))
         }
 
         mList = mutableListOf()
