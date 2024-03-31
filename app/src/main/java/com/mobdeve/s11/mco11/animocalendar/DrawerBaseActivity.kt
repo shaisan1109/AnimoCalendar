@@ -81,6 +81,7 @@ open class DrawerBaseActivity : AppCompatActivity(), NavigationView.OnNavigation
         eventFab.setOnClickListener {
             val intent = Intent(this, CreateEventActivity::class.java)
             startActivity(intent)
+
         }
     }
 
