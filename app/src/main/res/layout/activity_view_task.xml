@@ -10,14 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-<!--        <Button-->
-<!--            android:id="@+id/dispTaskColor"-->
-<!--            android:layout_width="49dp"-->
-<!--            android:layout_height="41dp"-->
-<!--            android:layout_marginStart="40dp"-->
-<!--            android:layout_marginTop="40dp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
+        <!--        <Button-->
+        <!--            android:id="@+id/dispTaskColor"-->
+        <!--            android:layout_width="49dp"-->
+        <!--            android:layout_height="41dp"-->
+        <!--            android:layout_marginStart="40dp"-->
+        <!--            android:layout_marginTop="40dp"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
         <ImageButton
             android:id="@+id/dispTaskColor"
@@ -32,18 +32,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/dispTaskName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="44dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="MCO3 Deadline"
-                android:textColor="?attr/colorCalendarText"
-                android:textSize="22sp"
-                app:layout_constraintStart_toEndOf="@+id/dispTaskColor"
-                app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/viewTaskNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="MCO3 Deadline"
+            android:textColor="?attr/colorCalendarText"
+            android:textSize="22sp"
+            app:layout_constraintStart_toEndOf="@+id/dispTaskColor"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/dispFinText"
@@ -57,20 +57,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dispTaskColor" />
 
-        <EditText
-            android:id="@+id/dispDateToFinish"
+        <TextView
+            android:id="@+id/viewDateTv"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="?attr/colorPrimary"
             android:ems="10"
             android:inputType="date"
             android:textColor="?attr/colorCalendarText"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/dispFinText"
-            app:layout_constraintTop_toBottomOf="@+id/dispTaskColor"
-            android:backgroundTint="?attr/colorPrimary" />
+            app:layout_constraintTop_toBottomOf="@+id/viewTaskNameTv" />
 
         <TextView
             android:id="@+id/dispCreateText"
@@ -82,44 +81,34 @@
             android:textColor="?attr/colorCalendarText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dispDateToFinish" />
-
-        <ImageView
-            android:id="@+id/dispCreatePfp"
-            android:layout_width="51dp"
-            android:layout_height="53dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dispCreateText"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:layout_constraintTop_toBottomOf="@+id/viewDateTv" />
 
         <TextView
-            android:id="@+id/dispCreateName"
+            android:id="@+id/viewHostTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
             android:text="Juan Dela Cruz"
             android:textColor="?attr/colorCalendarText"
             android:textSize="15sp"
-            app:layout_constraintStart_toEndOf="@+id/dispCreatePfp"
-            app:layout_constraintTop_toBottomOf="@+id/dispCreateText" />
+            app:layout_constraintStart_toEndOf="@+id/dispCreateText"
+            app:layout_constraintTop_toBottomOf="@+id/viewDateTv" />
 
         <TextView
             android:id="@+id/dispDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="27dp"
+            android:layout_marginTop="60dp"
             android:text="Task Description"
             android:textColor="?attr/colorCalendarText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dispCreatePfp" />
+            app:layout_constraintTop_toBottomOf="@+id/dispCreateText" />
 
         <TextView
-            android:id="@+id/dispDescContent"
+            android:id="@+id/viewDescTv"
             android:layout_width="match_parent"
             android:layout_height="102dp"
             android:layout_marginStart="40dp"
@@ -141,14 +130,14 @@
             android:textColor="?attr/colorCalendarText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dispDescContent" />
+            app:layout_constraintTop_toBottomOf="@+id/viewDescTv" />
 
-        <Button
-            android:id="@+id/dispPrioAnswer"
-            android:layout_width="110dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="68dp"
-            android:layout_marginTop="15dp"
+        <TextView
+            android:id="@+id/viewPrioTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="?attr/android:colorBackground"
             android:clickable="true"
             android:fontFamily="@font/inter_medium"
@@ -157,12 +146,9 @@
             android:text="URGENT"
             android:textAllCaps="false"
             android:textColor="?attr/colorOnBackground"
-            android:textSize="12sp"
-            app:cornerRadius="20dp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/dispPrio"
-            app:layout_constraintTop_toBottomOf="@+id/dispDescContent"
-            app:strokeColor="?attr/colorOnBackground"
-            app:strokeWidth="2dp" />
+            app:layout_constraintTop_toBottomOf="@+id/viewDescTv" />
 
         <TextView
             android:id="@+id/dispCat"
@@ -176,12 +162,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dispPrio" />
 
-        <Button
-            android:id="@+id/dispCatAnswer"
-            android:layout_width="110dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="10dp"
+        <TextView
+            android:id="@+id/viewCatTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="28dp"
             android:backgroundTint="?attr/android:colorBackground"
             android:clickable="false"
             android:fontFamily="@font/inter_medium"
@@ -190,12 +176,9 @@
             android:text="Academic"
             android:textAllCaps="false"
             android:textColor="?attr/colorOnBackground"
-            android:textSize="12sp"
-            app:cornerRadius="20dp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/dispCat"
-            app:layout_constraintTop_toBottomOf="@+id/dispPrioAnswer"
-            app:strokeColor="?attr/colorOnBackground"
-            app:strokeWidth="2dp" />
+            app:layout_constraintTop_toBottomOf="@+id/viewPrioTv" />
 
         <Button
             android:id="@+id/dispEdt"
