@@ -3,6 +3,7 @@ package com.mobdeve.s11.mco11.animocalendar
 import ToDoModel
 import android.content.Context
 import android.content.Intent
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -56,13 +57,16 @@ class ToDoAdapter(private val activity: TasksActivity, private val todoList: Lis
         holder.mCheckBox.text = toDoModel.taskName
         holder.mDueDateTv.text = "Due On " + toDoModel.dueDate
         holder.mCheckBox.isChecked = toBoolean(toDoModel.status)
+        holder.mPriorityTv.text = toDoModel.priority.displayName
         val taskId = toDoModel.taskId ?: ""
 
         holder.mCheckBox.setOnCheckedChangeListener { compoundButton, isChecked ->
             if (isChecked) {
                 firestore.collection("task").document(taskId).update("status", 1)
+                holder.mCheckBox.paintFlags = holder.mCheckBox.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
             } else {
                 firestore.collection("task").document(taskId).update("status", 0)
+                holder.mCheckBox.paintFlags = holder.mCheckBox.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
             }
         }
     }
@@ -78,5 +82,6 @@ class ToDoAdapter(private val activity: TasksActivity, private val todoList: Lis
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var mDueDateTv: TextView = itemView.findViewById(R.id.dueDateTv)
         var mCheckBox: CheckBox = itemView.findViewById(R.id.mCheckBox)
+        var mPriorityTv: TextView = itemView.findViewById(R.id.taskPriorityTv)
     }
 }

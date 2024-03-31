@@ -181,7 +181,7 @@
             app:layout_constraintTop_toBottomOf="@+id/viewPrioTv" />
 
         <Button
-            android:id="@+id/dispEdt"
+            android:id="@+id/editBtn"
             android:layout_width="125dp"
             android:layout_height="50dp"
             android:layout_marginStart="153dp"

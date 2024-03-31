@@ -12,12 +12,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
+import com.mobdeve.s11.mco11.animocalendar.databinding.ActivityTasksBinding
 
 class TasksActivity : AppCompatActivity() {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var mFab: FloatingActionButton
-
+    private lateinit var binding: ActivityTasksBinding
     private lateinit var firestore: FirebaseFirestore
     private lateinit var adapter: ToDoAdapter
     private lateinit var mList: MutableList<ToDoModel>
@@ -26,26 +25,27 @@ class TasksActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tasks)
+        binding = ActivityTasksBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        recyclerView = findViewById(R.id.taskListRv)
-        mFab = findViewById(R.id.addTaskFab)
         firestore = FirebaseFirestore.getInstance()
 
-        recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.apply {
+            taskListRv.setHasFixedSize(true)
+            taskListRv.layoutManager = LinearLayoutManager(this@TasksActivity)
 
-        mFab.setOnClickListener {
-            startActivity(Intent(this, CreateTaskActivity::class.java))
+            addTaskFab.setOnClickListener {
+                startActivity(Intent(this@TasksActivity, CreateTaskActivity::class.java))
+            }
         }
 
         mList = mutableListOf()
         adapter = ToDoAdapter(this, mList, supportFragmentManager)
 
         val itemTouchHelper = ItemTouchHelper(TouchHelper(adapter, supportFragmentManager))
-        itemTouchHelper.attachToRecyclerView(recyclerView)
+        itemTouchHelper.attachToRecyclerView(binding.taskListRv)
 
-        recyclerView.adapter = adapter
+        binding.taskListRv.adapter = adapter
         showData()
     }
 

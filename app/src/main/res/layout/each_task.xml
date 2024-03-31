@@ -38,6 +38,15 @@
                 app:layout_constraintStart_toStartOf="@+id/mCheckBox"
                 app:layout_constraintTop_toBottomOf="@+id/mCheckBox" />
 
+            <TextView
+                android:id="@+id/taskPriorityTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="36dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="@+id/mCheckBox"
+                app:layout_constraintTop_toBottomOf="@+id/mCheckBox" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

@@ -1,15 +1,29 @@
 package com.mobdeve.s11.mco11.animocalendar
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.mobdeve.s11.mco11.animocalendar.databinding.ActivityViewTaskBinding
 
 class ViewTaskActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityViewTaskBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_view_task)
+        binding = ActivityViewTaskBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Retrieve task details from intent extras
+        val taskId = intent.getStringExtra("taskId") ?: ""
+
+        binding.editBtn.setOnClickListener {
+            val intent = Intent(this, EditTaskActivity::class.java)
+            intent.putExtra("taskId", taskId)
+            startActivity(intent)
+        }
+
         val taskName = intent.getStringExtra("task")
         val dueDate = intent.getStringExtra("due")
         val description = intent.getStringExtra("description")
@@ -17,21 +31,13 @@ class ViewTaskActivity : AppCompatActivity() {
         val priority = intent.getStringExtra("priority")?.let { ToDoModel.Priority.valueOf(it) } ?: ToDoModel.Priority.Low
         val category = intent.getStringExtra("category")?.let { ToDoModel.Category.valueOf(it) } ?: ToDoModel.Category.Personal
 
-
-        // Find TextViews in the layout
-        val taskNameTv: TextView = findViewById(R.id.viewTaskNameTv)
-        val dueDateTv: TextView = findViewById(R.id.viewDateTv)
-        val descriptionTv: TextView = findViewById(R.id.viewDescTv)
-        val hostTv: TextView = findViewById(R.id.viewHostTv)
-        val priorityTv: TextView = findViewById(R.id.viewPrioTv)
-        val categoryTv: TextView = findViewById(R.id.viewCatTv)
-
-        // Set task details to TextViews
-        taskNameTv.text = taskName
-        dueDateTv.text = dueDate
-        descriptionTv.text = description
-        hostTv.text = host
-        priorityTv.text = priority.displayName
-        categoryTv.text = category.displayName
+        binding.apply {
+            viewTaskNameTv.text = taskName
+            viewDateTv.text = dueDate
+            viewDescTv.text = description
+            viewHostTv.text = host
+            viewPrioTv.text = priority.displayName
+            viewCatTv.text = category.displayName
+        }
     }
 }
