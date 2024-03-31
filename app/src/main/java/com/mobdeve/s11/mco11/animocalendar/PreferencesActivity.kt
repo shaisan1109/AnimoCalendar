@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.preference.PreferenceFragmentCompat
 import com.mobdeve.s11.mco11.animocalendar.databinding.ActivityPreferencesBinding
 
 class PreferencesActivity : DrawerBaseActivity() {
@@ -24,6 +25,21 @@ class PreferencesActivity : DrawerBaseActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        // Attach settings fragment here
+        if (savedInstanceState == null) {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.settings, PreferencesFragment())
+                .commit()
+        }
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    class PreferencesFragment : PreferenceFragmentCompat() {
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+            setPreferencesFromResource(R.xml.preferences, rootKey)
         }
     }
 }
