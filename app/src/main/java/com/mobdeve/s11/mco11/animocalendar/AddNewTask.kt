@@ -1,7 +1,5 @@
 import android.app.DatePickerDialog
 import android.content.Context
-import android.content.DialogInterface
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,76 +9,60 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.mobdeve.s11.mco11.animocalendar.OnDialogCloseListener
 import com.mobdeve.s11.mco11.animocalendar.R
 import java.util.*
 
-class AddNewTask : DialogFragment() {
+class AddNewTask : Fragment() {
 
     companion object {
         const val TAG = "AddNewTask"
-
         fun newInstance(): AddNewTask {
             return AddNewTask()
         }
     }
 
-    private lateinit var setDueDate: TextView
-    private lateinit var mTaskEdit: EditText
+
+    private lateinit var setDueDate: EditText
+    private lateinit var mTaskNameEdit: EditText
+    private lateinit var mTaskDescEdit: EditText
     private lateinit var mSaveBtn: Button
     private lateinit var firestore: FirebaseFirestore
     private lateinit var context: Context
     private var dueDate: String = ""
-    private var id = ""
-    private var dueDateUpdate = ""
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.add_new_task, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_create_task, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setDueDate = view.findViewById(R.id.setDueDateTv)
-        mTaskEdit = view.findViewById(R.id.taskEt)
-        mSaveBtn = view.findViewById(R.id.saveBtn)
+        setDueDate = view.findViewById(R.id.dateTv)
+        mTaskNameEdit = view.findViewById(R.id.taskNameEt)
+        mTaskDescEdit = view.findViewById(R.id.descriptionEt)
+        mSaveBtn = view.findViewById(R.id.createBtn)
 
         firestore = FirebaseFirestore.getInstance()
 
-        var isUpdate = false
-
-        val bundle = arguments
-        if (bundle != null) {
-            isUpdate = true
-            val task = bundle.getString("task")
-            id = bundle.getString("id")!!
-            dueDateUpdate = bundle.getString("due")!!
-
-            mTaskEdit.setText(task)
-            setDueDate.text = dueDateUpdate
-
-            if (task!!.length > 0) {
-                mSaveBtn.isEnabled = false
-                mSaveBtn.setBackgroundColor(Color.GRAY)
-            }
-        }
-
-        mTaskEdit.addTextChangedListener(object : TextWatcher {
+        mTaskNameEdit.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
 
             override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-                if (charSequence.toString().isEmpty()) {
-                    mSaveBtn.isEnabled = false
-                    mSaveBtn.setBackgroundColor(Color.GRAY)
-                } else {
-                    mSaveBtn.isEnabled = true
-                    mSaveBtn.setBackgroundColor(resources.getColor(R.color.light_accent))
-                }
+                mSaveBtn.isEnabled = charSequence.isNotBlank()
+                mSaveBtn.setBackgroundColor(
+                    resources.getColor(
+                        if (charSequence.isNotBlank()) R.color.light_accent else android.R.color.darker_gray
+                    )
+                )
             }
 
             override fun afterTextChanged(editable: Editable) {}
@@ -88,64 +70,48 @@ class AddNewTask : DialogFragment() {
 
         setDueDate.setOnClickListener {
             val calendar = Calendar.getInstance()
-
-            val MONTH = calendar.get(Calendar.MONTH)
-            val YEAR = calendar.get(Calendar.YEAR)
-            val DAY = calendar.get(Calendar.DATE)
-
-            val datePickerDialog = DatePickerDialog(context, { datePicker: DatePicker, i: Int, i1: Int, i2: Int ->
-                var i = i
-                i = i + 1
-                setDueDate.text = "$i2/$i1/$i"
-                dueDate = "$i2/$i1/$i"
-            }, YEAR, MONTH, DAY)
+            val datePickerDialog = DatePickerDialog(
+                requireContext(),
+                { _: DatePicker, i: Int, i1: Int, i2: Int ->
+                    var i = i
+                    i = i + 1
+                    setDueDate.setText("$i2/$i1/$i")
+                    dueDate = "$i2/$i1/$i"
+                },
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH)
+            )
 
             datePickerDialog.show()
         }
 
-        val finalIsUpdate = isUpdate
         mSaveBtn.setOnClickListener {
-            val task = mTaskEdit.text.toString()
+            val task = mTaskNameEdit.text.toString()
+            val desc = mTaskDescEdit.text.toString()
 
-            if (finalIsUpdate) {
-                firestore.collection("task").document(id).update("task", task, "due", dueDate)
-                Toast.makeText(context, "Task Updated", Toast.LENGTH_SHORT).show()
+            if (task.isEmpty()) {
+                Toast.makeText(requireContext(), "Task name cannot be blank", Toast.LENGTH_SHORT).show()
             } else {
-                if (task.isEmpty()) {
-                    Toast.makeText(context, "Please add a task", Toast.LENGTH_SHORT).show()
-                } else {
-                    val taskMap = hashMapOf<String, Any>()
-                    taskMap["task"] = task
-                    taskMap["due"] = dueDate
-                    taskMap["status"] = 0
-                    taskMap["time"] = FieldValue.serverTimestamp()
+                val taskMap = hashMapOf<String, Any>()
+                taskMap["task"] = task
+                taskMap["due"] = dueDate
+                taskMap["description"] = desc
+                taskMap["status"] = 0
+                taskMap["time"] = FieldValue.serverTimestamp()
 
-                    firestore.collection("task").add(taskMap)
-                        .addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                Toast.makeText(context, "Task Saved", Toast.LENGTH_SHORT).show()
-                            } else {
-                                Toast.makeText(context, task.exception?.message, Toast.LENGTH_SHORT).show()
-                            }
-                        }.addOnFailureListener { e ->
-                            Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
+                firestore.collection("task").add(taskMap)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(requireContext(), "Task Saved", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(requireContext(), task.exception?.message, Toast.LENGTH_SHORT).show()
                         }
-                }
+                    }.addOnFailureListener { e ->
+                        Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+                    }
             }
-            dismiss()
-        }
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        this.context = context
-    }
-
-    override fun onDismiss(dialog: DialogInterface) {
-        super.onDismiss(dialog)
-        val activity = getActivity()
-        if (activity is OnDialogCloseListener) {
-            (activity as OnDialogCloseListener).onDialogClose(dialog)
         }
     }
 }
+

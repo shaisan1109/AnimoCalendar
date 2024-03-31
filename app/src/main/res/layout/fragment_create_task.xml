@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <ImageButton
-        android:id="@+id/createColorButton"
+        android:id="@+id/createColorBtn"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="40dp"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/finishByText"
+        android:id="@+id/finishByTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -45,7 +45,7 @@
         android:textColor="?attr/colorOutline"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createColorButton" />
+        app:layout_constraintTop_toBottomOf="@+id/createColorBtn" />
 
     <EditText
         android:id="@+id/dateTv"
@@ -58,12 +58,12 @@
         android:textColor="?attr/colorCalendarText"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/finishByText"
-        app:layout_constraintTop_toBottomOf="@+id/createColorButton"
+        app:layout_constraintStart_toEndOf="@+id/finishByTv"
+        app:layout_constraintTop_toBottomOf="@+id/createColorBtn"
         android:backgroundTint="?attr/colorPrimary" />
 
     <TextView
-        android:id="@+id/createdByText"
+        android:id="@+id/createdByTv"
         android:layout_width="wrap_content"
         android:layout_height="24dp"
         android:layout_marginStart="40dp"
@@ -72,7 +72,7 @@
         android:textColor="?attr/colorCalendarText"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/finishByText" />
+        app:layout_constraintTop_toBottomOf="@+id/finishByTv" />
 
     <ImageView
         android:id="@+id/hostPfp"
@@ -81,7 +81,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createdByText"
+        app:layout_constraintTop_toBottomOf="@+id/createdByTv"
         tools:srcCompat="@tools:sample/avatars" />
 
     <EditText
@@ -96,7 +96,7 @@
         android:inputType="text"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/hostPfp"
-        app:layout_constraintTop_toBottomOf="@+id/createdByText"
+        app:layout_constraintTop_toBottomOf="@+id/createdByTv"
         android:textColor="?attr/colorCalendarText"/>
 
     <EditText
@@ -114,10 +114,10 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createTaskDesc" />
+        app:layout_constraintTop_toBottomOf="@+id/taskDescTv" />
 
     <TextView
-        android:id="@+id/createTaskDesc"
+        android:id="@+id/taskDescTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -166,7 +166,7 @@
         app:layout_constraintTop_toBottomOf="@+id/descriptionEt">
 
         <TextView
-            android:id="@+id/prioText"
+            android:id="@+id/priorityTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Priority"
@@ -176,40 +176,40 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <RadioButton
-            android:id="@+id/lowButto"
+            android:id="@+id/lowPrioRBtn"
             android:layout_width="179dp"
             android:layout_height="33dp"
             android:layout_marginTop="4dp"
             android:text="Low Priority"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/prioText" />
+            app:layout_constraintTop_toBottomOf="@+id/priorityTv" />
 
         <RadioButton
-            android:id="@+id/midButto"
+            android:id="@+id/midPrioRBtn"
             android:layout_width="179dp"
             android:layout_height="33dp"
             android:layout_marginTop="4dp"
             android:text="Medium Priority"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lowButto" />
+            app:layout_constraintTop_toBottomOf="@+id/lowPrioRBtn" />
 
         <RadioButton
-            android:id="@+id/hiButto"
+            android:id="@+id/highPrioRBtn"
             android:layout_width="179dp"
             android:layout_height="33dp"
             android:layout_marginTop="4dp"
             android:text="High Priority"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/midButto" />
+            app:layout_constraintTop_toBottomOf="@+id/midPrioRBtn" />
 
         <RadioButton
-            android:id="@+id/urgButto"
+            android:id="@+id/urgPrioRBtn"
             android:layout_width="179dp"
             android:layout_height="33dp"
             android:layout_marginTop="4dp"
             android:text="Urgent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hiButto" />
+            app:layout_constraintTop_toBottomOf="@+id/highPrioRBtn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -224,31 +224,31 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
 
         <RadioButton
-            android:id="@+id/persButto"
+            android:id="@+id/personalRBtn"
             android:layout_width="179dp"
             android:layout_height="33dp"
             android:text="Personal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cateText" />
+            app:layout_constraintTop_toBottomOf="@+id/categoryTv" />
 
         <RadioButton
-            android:id="@+id/acadButto"
+            android:id="@+id/acadRBtn"
             android:layout_width="179dp"
             android:layout_height="33dp"
             android:text="Academic"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/persButto" />
+            app:layout_constraintTop_toBottomOf="@+id/personalRBtn" />
 
         <RadioButton
-            android:id="@+id/holiButto"
+            android:id="@+id/holdayRBtn"
             android:layout_width="179dp"
             android:layout_height="33dp"
             android:text="Holiday"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/acadButto" />
+            app:layout_constraintTop_toBottomOf="@+id/acadRBtn" />
 
         <TextView
-            android:id="@+id/cateText"
+            android:id="@+id/categoryTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Category"

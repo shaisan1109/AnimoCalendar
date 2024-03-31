@@ -1,6 +1,7 @@
 package com.mobdeve.s11.mco11.animocalendar
 
 import AddNewTask
+import ToDoModel
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,10 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
 
-class ToDoAdapter(private val activity: TasksActivity, private val todoList: List<ToDoModel>) :
+class ToDoAdapter(private val activity: TasksActivity, private val todoList: List<ToDoModel>, private val fragmentManager: FragmentManager) :
     RecyclerView.Adapter<ToDoAdapter.MyViewHolder>() {
 
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -33,24 +35,31 @@ class ToDoAdapter(private val activity: TasksActivity, private val todoList: Lis
         return activity
     }
 
-    fun editTask(position: Int) {
+    fun editTask(position: Int, fragmentManager: FragmentManager) {
         val toDoModel = todoList[position]
 
         val bundle = Bundle().apply {
-            putString("task", toDoModel.task)
-            putString("due", toDoModel.due)
+            putString("task", toDoModel.taskName)
+            putString("due", toDoModel.dueDate)
+            putString("description", toDoModel.taskDescription)
             putString("id", toDoModel.taskId)
         }
 
-        val addNewTask = AddNewTask()
+        val addNewTask = AddNewTask.newInstance()
         addNewTask.arguments = bundle
-        addNewTask.show(activity.supportFragmentManager, addNewTask.tag)
+
+        fragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, addNewTask, AddNewTask.TAG)
+            .addToBackStack(null)
+            .commit()
     }
+
+
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val toDoModel = todoList[position]
-        holder.mCheckBox.text = toDoModel.task
-        holder.mDueDateTv.text = "Due On " + toDoModel.due
+        holder.mCheckBox.text = toDoModel.taskName
+        holder.mDueDateTv.text = "Due On " + toDoModel.dueDate
         holder.mCheckBox.isChecked = toBoolean(toDoModel.status)
         val taskId = toDoModel.taskId ?: ""
 

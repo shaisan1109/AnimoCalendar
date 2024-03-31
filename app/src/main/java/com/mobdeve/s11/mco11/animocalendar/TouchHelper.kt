@@ -2,10 +2,11 @@ package com.mobdeve.s11.mco11.animocalendar
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 
-class TouchHelper(private val adapter: ToDoAdapter) : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+class TouchHelper(private val adapter: ToDoAdapter, private val fragmentManager: FragmentManager) : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
 
     override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
         return false
@@ -22,7 +23,7 @@ class TouchHelper(private val adapter: ToDoAdapter) : ItemTouchHelper.SimpleCall
                 .create()
                 .show()
         } else {
-            adapter.editTask(position)
+            adapter.editTask(position, fragmentManager)
         }
     }
 }

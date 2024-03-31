@@ -3,10 +3,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
 import com.google.firebase.firestore.FirebaseFirestore
-import com.mobdeve.s11.mco11.animocalendar.databinding.ActivityCreateTaskBinding
+//import com.mobdeve.s11.mco11.animocalendar.databinding.ActivityCreateTaskBinding
 
 class CreateTaskActivity : AppCompatActivity() {
-
+/*
     private lateinit var binding: ActivityCreateTaskBinding
     private lateinit var firestore: FirebaseFirestore
 
@@ -44,6 +44,6 @@ class CreateTaskActivity : AppCompatActivity() {
             // Validate inputs, save data to Firestore, etc.
 
         }
-    }
+    } */
 }
 
